@@ -1,10 +1,13 @@
-import java.util.List;
+import com.github.javafaker.Faker;
+
+import java.util.Locale;
 
 public class TestData {
-    public static String phoneNumber = "+7 (812) 317-00-00";
-    public static List<String> headerMenu = List
-            .of("Акции", "Промонаборы", "Доставка и оплата", "Сотрудничество", "Контакты");
-    public static String textSearch = "Вода";
-    public static String textSearchResult = "Вопрос-ответ";
-    public static String emptyCart = "Ваша корзина пуста!";
+    private static final Faker FAKER = new Faker(new Locale("RU"));
+    public static String email = FAKER.internet().emailAddress();
+    public static String fio = FAKER.name().nameWithMiddle();
+    public static String birthdate = "10.01.1956";
+    public static final String DEFAULT_INN = "7707329152";
+    public static String companyName = String.format("OOO %s", FAKER.company().name());
+    public static String phoneNumber = String.format("910%s", FAKER.phoneNumber().subscriberNumber(7));
 }

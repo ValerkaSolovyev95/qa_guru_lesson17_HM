@@ -13,9 +13,9 @@ import java.util.Map;
 public class BaseTest {
     @BeforeAll
     static void setup() {
-        Configuration.baseUrl = "https://www.vodovoz-spb.ru";
+        Configuration.baseUrl = "https://www.tinkoff.ru";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
+        Configuration.pageLoadTimeout = 8000;
         Configuration.browser = System.getProperty("browser");
         Configuration.browserSize = System.getProperty("browser_size");
         Configuration.remote = String.format("https://user1:1234@%s/wd/hub", System.getProperty("remote_url"));
