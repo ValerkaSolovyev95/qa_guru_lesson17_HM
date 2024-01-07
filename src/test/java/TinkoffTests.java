@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.BusinessAccountPage;
 import pages.CareerPage;
@@ -8,6 +9,7 @@ import pages.SendMessagePage;
 
 import static io.qameta.allure.Allure.step;
 
+@Tag("tinkoff_test")
 public class TinkoffTests extends BaseTest {
     private final MainPage MAIN_PAGE = new MainPage();
     private final DebitCardPage DEBIT_CARD_PAGE = new DebitCardPage();

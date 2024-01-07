@@ -56,9 +56,9 @@ tasks.withType(Test) {
     }
 }
 
-tasks.register("regression", Test) {
+tasks.register("tinkoff_test", Test) {
     useJUnitPlatform{
-        includeTags("regression")
+        includeTags("tinkoff_test")
     }
     systemProperties(System.getProperties())
 
