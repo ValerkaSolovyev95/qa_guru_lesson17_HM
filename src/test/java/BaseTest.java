@@ -1,8 +1,10 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import configs.WebConfig;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,17 +17,15 @@ public class BaseTest {
 
     @BeforeAll
     static void setup() {
+        WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());
         Configuration.baseUrl = "https://www.tinkoff.ru";
         Configuration.pageLoadStrategy = "eager";
         Configuration.pageLoadTimeout = 8000;
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserSize = System.getProperty("browser_size", "1920x1080");
-        Configuration.browserVersion = System.getProperty("browser_version", "120.0");
+        Configuration.browser = webConfig.getBrowserName();
+        Configuration.browserSize = webConfig.getBrowserSize();
+        Configuration.browserVersion = webConfig.getBrowserVersion();
         if (env.equals("remote")) {
-            Configuration.remote = System.getProperty(
-                    "remoteUrl",
-                    "https://user1:1234@selenoid.autotests.cloud/wd/hub"
-            );
+            Configuration.remote = webConfig.getRemoteUrl();
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                     "enableVNC", true,
