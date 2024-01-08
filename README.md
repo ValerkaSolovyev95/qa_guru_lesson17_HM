@@ -68,11 +68,6 @@ ____
 
 ### **Параметры сборки в Jenkins:**
 - *TASK (задача для запуска тестов tinkoff_test)*
-- *BROWSER (браузер, по умолчанию chrome)*
-- *VERSION (версия браузера, по умолчанию 100.0)*
-- *REMOTE_URL (адрес хоста, по умолчанию selenoid.autotests.cloud)*
-- *WINDOW_SIZE (размер окна браузера, по умолчанию 1920x1080)*
-- *ENVIRONMENT (тестовое окружение, по умолчанию PROD)*
 - *COMMENT (переменная для передачи id telegram ответственного за прогон)*
 - *ENV (указатель, что тесты запускаются удаленно, по умолчанию remote)*
 
@@ -88,10 +83,6 @@ gradle clean test -Dtag=tinkoff_test
 ```bash  
 clean ${TASK} 
 "-Denv=${ENV}" 
-"-Dbrowser=${BROWSER}" 
-"-Dbrowser_size=${WINDOW_SIZE}" 
-"-Dbrowser_version=${VERSION}" 
-"-Dremote_url=${REMOTE_URL}"
 ```
 ___
 <a id="allure"></a>

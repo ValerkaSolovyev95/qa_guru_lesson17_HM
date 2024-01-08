@@ -8,14 +8,14 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
     private static final String MAIN_ARTICLES = "Частным лицам Бизнесу Премиум Еще";
-    private final SelenideElement MENU_ARTICLE = $("[data-schema-path=\"config.menu.response\"]");
+    private SelenideElement menuArticle = $("[data-schema-path=\"config.menu.response\"]");
     public MainPage openMainPage() {
         open("/");
         return this;
     }
 
     public MainPage checkMainPageArticle() {
-        MENU_ARTICLE.shouldHave(Condition.text(MAIN_ARTICLES));
+        menuArticle.shouldHave(Condition.text(MAIN_ARTICLES));
         return this;
     }
 }

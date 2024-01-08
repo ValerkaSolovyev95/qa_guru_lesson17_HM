@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class CareerPage {
     private static final String CAREER_URI = "/career/";
     private static final String CAREER_ARTICLES = "Работа в ИТ Бизнес и процессы Работа с клиентами";
-    private static final SelenideElement CAREER_ARTICLE = $("[data-qa-type=\"uikit/navigation.menu\"]");
+    private SelenideElement careerArticle = $("[data-qa-type=\"uikit/navigation.menu\"]");
 
     public CareerPage openCareerPage() {
         open(CAREER_URI);
@@ -17,7 +17,7 @@ public class CareerPage {
     }
 
     public CareerPage checkCareerArticlePage() {
-        CAREER_ARTICLE.shouldHave(Condition.text(CAREER_ARTICLES));
+        careerArticle.shouldHave(Condition.text(CAREER_ARTICLES));
         return this;
     }
 }
