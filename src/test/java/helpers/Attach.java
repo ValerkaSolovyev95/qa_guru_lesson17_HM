@@ -46,8 +46,7 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        WebConfig webConfig = ConfigFactory.create(WebConfig.class, System.getProperties());
-        String videoUrl = String.format("https://%s/video/%s.mp4", webConfig.getRemoteUrl(), sessionId());
+        String videoUrl = String.format("https://selenoid.autotests.cloud/video/%s.mp4", sessionId());
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {
