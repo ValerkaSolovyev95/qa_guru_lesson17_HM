@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -9,6 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class SendMessagePage {
     private SelenideElement phoneNumberTitle = $(byXpath("//div[@data-qa-type=\"uikit/sectionTitle\"]"));
 
+    @Step("Check phone number")
     public SendMessagePage checkPhoneNumberForMessage(String phoneNumber) {
         String phoneNumberProcessed = String.format(
                 "+7 (910) %s-%s-%s",

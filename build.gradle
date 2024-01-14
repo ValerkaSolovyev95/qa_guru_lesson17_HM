@@ -58,9 +58,79 @@ tasks.withType(Test) {
     }
 }
 
-tasks.register("tinkoff_test", Test) {
+tasks.register("business_account_tests", Test) {
     useJUnitPlatform {
-        includeTags("tinkoff_test")
+        includeTags("business_account_tests")
+    }
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+tasks.register("card_tests", Test) {
+    useJUnitPlatform {
+        includeTags("card_tests")
+    }
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+tasks.register("deposit_tests", Test) {
+    useJUnitPlatform {
+        includeTags("deposit_tests")
+    }
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+tasks.register("career_page_tests", Test) {
+    useJUnitPlatform {
+        includeTags("career_page_tests")
+    }
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+tasks.register("main_page_tests", Test) {
+    useJUnitPlatform {
+        includeTags("main_page_tests")
+    }
+    systemProperties(System.getProperties())
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+tasks.register("town_service_tests", Test) {
+    useJUnitPlatform {
+        includeTags("town_service_tests")
     }
     systemProperties(System.getProperties())
 

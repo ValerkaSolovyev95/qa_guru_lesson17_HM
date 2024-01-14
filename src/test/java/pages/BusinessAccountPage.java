@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
@@ -46,39 +47,46 @@ public class BusinessAccountPage {
                     )
             );
 
+    @Step("Open business account page")
     public BusinessAccountPage openBusinessAccountPage() {
         open(URI_BUSINESS);
         return this;
     }
 
+    @Step("Click button open business account")
     public BusinessAccountPage clickOpenBusinessAccountButton() {
         openBusinessAccountButton.click();
         return this;
     }
 
+    @Step("Filling field phone")
     public BusinessAccountPage fillingFieldPhone(String phoneNumber) {
         inputPhoneContainer.click();
         inputPhoneField.setValue(phoneNumber);
         return this;
     }
 
+    @Step("Filling field company name")
     public BusinessAccountPage fillingFieldCompanyName(String companyName) {
         companyNameField.setValue(companyName).pressEnter();
         return this;
     }
 
+    @Step("Filling field inn")
     public BusinessAccountPage fillingFieldInn(String inn) {
         inputInnContainer.click();
         inputInnField.setValue(inn);
         return this;
     }
 
+    @Step("Filling field fio")
     public BusinessAccountPage fillingFieldFio(String fio) {
         inputFioContainer.click();
         inputFioField.setValue(fio);
         return this;
     }
 
+    @Step("Click submit button")
     public BusinessAccountPage clickSubmitButton() {
         submitButton.click();
         return this;

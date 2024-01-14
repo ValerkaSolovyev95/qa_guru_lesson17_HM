@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selectors.byXpath;
@@ -51,16 +52,19 @@ public class DepositPage {
                     )
             );
 
+    @Step("Open deposit page")
     public DepositPage openDepositPage() {
         open(DEPOSIT_URI);
         return this;
     }
 
+    @Step("Click open deposit button")
     public DepositPage clickOpenDepositButton() {
         openDepositButton.click();
         return this;
     }
 
+    @Step("Set minimum deposit sum")
     public DepositPage setMinimumAmount() {
         inputAmountContainer.click();
         inputAmountField.sendKeys(Keys.CONTROL, "a");
@@ -68,24 +72,28 @@ public class DepositPage {
         return this;
     }
 
+    @Step("Filling field fio")
     public DepositPage fillingFieldFio(String fio) {
         inputFioContainer.click();
         inputFioField.setValue(fio);
         return this;
     }
 
+    @Step("Field field phone")
     public DepositPage fillingFieldPhone(String phone) {
         inputPhoneContainer.click();
         inputPhoneField.setValue(phone);
         return this;
     }
 
+    @Step("Filling field birthday")
     public DepositPage fillingFieldBirthday(String birthday) {
         inputBirthdayContainer.click();
         inputBirthdayField.setValue(birthday);
         return this;
     }
 
+    @Step("Click submit button")
     public DepositPage clickSubmitButton() {
         submitButton.click();
         return this;

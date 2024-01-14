@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.github.javafaker.Faker;
+import io.qameta.allure.Step;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,16 +69,19 @@ public class DebitCardPage {
             submitButton = $(byXpath("//div[@data-field-name=\"submit\"]")),
             multiSelectWrapper = $("[data-qa-type=\"uikit/multiSelect.wrapper.rightContainer\"]");
 
+    @Step("Open card page")
     public DebitCardPage openDebitCardPage() {
         open(DEBIT_CARD_URI);
         return this;
     }
 
+    @Step("Click order card button")
     public DebitCardPage clickOrderCardButton() {
         orderCardButton.click();
         return this;
     }
 
+    @Step("Choice card design")
     public DebitCardPage choiceCardDesign() {
         String choiceCardLoc = String.format(
                 CARD_DESIGN_PANEL,
@@ -88,30 +92,35 @@ public class DebitCardPage {
         return this;
     }
 
+    @Step("Filling field fio")
     public DebitCardPage fillingFieldFio(String fio) {
         inputFioContainer.click();
         inputFioField.setValue(fio);
         return this;
     }
 
+    @Step("Filling field phone")
     public DebitCardPage fillingFieldPhone(String phone) {
         inputPhoneContainer.click();
         inputPhoneField.setValue(phone);
         return this;
     }
 
+    @Step("Filling field email")
     public DebitCardPage fillingFieldEmail(String email) {
         inputEmailContainer.click();
         inputEmailField.setValue(email);
         return this;
     }
 
+    @Step("Filling field birthday")
     public DebitCardPage fillingFieldBirthday(String birthday) {
         inputBirthdayContainer.click();
         inputBirthdayField.setValue(birthday);
         return this;
     }
 
+    @Step("Click submit button")
     public DebitCardPage clickSubmitButton() {
         submitButton.click();
         return this;
@@ -131,6 +140,7 @@ public class DebitCardPage {
         return this;
     }
 
+    @Step("Choice cashback category")
     public DebitCardPage choiceCashBackCategory() {
         clickMultiSelectWrapper();
         clickCashbackCategory();

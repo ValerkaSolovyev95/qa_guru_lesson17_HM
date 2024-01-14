@@ -77,7 +77,7 @@ ____
 ___
 ***Локальный запуск:***
 ```bash  
-gradle clean test -Dtag=tinkoff_test
+gradle clean test
 ```
 
 ***Удалённый запуск через Jenkins:***
@@ -85,9 +85,17 @@ gradle clean test -Dtag=tinkoff_test
 clean ${TASK} 
 "-Denv=${ENV}" 
 ```
+***Tasks для запуска тестов:***
+- *test - запуск всех ui тестов*
+- *business_account_tests - запуск ui тестов проверки функциональности счетов малого бизнеса*
+- *card_tests - запуск ui тестов проверки функциональности открытия дебетовой карты*
+- *career_page_tests - запуск ui тестов проверки функциональности страницы карьера*
+- *deposit_tests - запуск ui тестов проверки функциональности открытия депозитов*
+- *main_page_tests - запуск ui тестов проверки функциональности главной страницы*
+- *town_service_tests - запуск ui тестов проверки функциональности сервиса город*
 ___
 <a id="allure"></a>
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/qa_guru_stream_22_lesson17HW_vasolovev/9/allure/)</a>
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/qa_guru_stream_22_lesson17HW_vasolovev/allure/)</a>
 ___
 
 ### *Основная страница отчёта*
